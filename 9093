@@ -1,0 +1,16 @@
+import sys
+n = int(sys.stdin.readline())
+
+for i in range(n):
+    sentence = sys.stdin.readline().split()
+    stack=[]
+    for word in sentence :
+        for alpha in word:
+            stack.append(alpha)
+        
+        
+        for t in range(len(stack)) :
+            print(stack.pop(-1), end='')
+        print('', end=' ')
+        
+    print('')
