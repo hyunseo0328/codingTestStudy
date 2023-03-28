@@ -1,0 +1,17 @@
+import sys
+N, K = map(int, sys.stdin.readline().split())
+
+list = [ i for i in range(1, N+1 )]
+
+answer = []
+num = 0 
+
+
+for n in range(N) : 
+    num += K-1
+    if num >= len(list) :
+        num = num % len(list)
+        
+    answer.append(str(list.pop(num)))
+
+print("<", ", ".join(answer)[:], ">", sep='')
