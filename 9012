@@ -1,0 +1,21 @@
+import sys
+n = int(sys.stdin.readline())
+
+for t in range(n):
+    sentence = sys.stdin.readline()
+    stack = []
+    status = ""
+    for word in sentence:
+        if word =='(' : 
+            stack.append('(') 
+        elif word == ')' :
+            if len(stack) == 0 :
+                status = "NO"
+                break;
+            else :
+                stack.pop(-1)
+    
+    if status == "NO" or len(stack)!=0 :
+        print("NO")
+    else:
+        print("YES")
